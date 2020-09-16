@@ -1,0 +1,3 @@
+NAME = killall
+LOCAL = $HOME/local
+BIN = $LOCAL/bin

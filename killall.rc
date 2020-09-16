@@ -1,0 +1,2 @@
+#!/bin/env rc
+exec kill `{ps -A | grep $* | awk '{print $1}'}
