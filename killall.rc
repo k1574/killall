@@ -1,2 +1,16 @@
 #!/bin/env rc
-exec kill `{ps -A | grep $* | awk '{print $1}'}
+fn usage {
+	echo usage: $0 [names]>[2=1]
+	exit 1
+}
+
+if(test $#* -lt 1)
+	usage
+
+for(i in $*){
+	ps = `{ps -A | grep $i | awk '{print $1}'}
+	if(test $#* -lt 1 )
+		echo $0: $*: no such process >[2=1]
+	kill $ps
+}
+	
